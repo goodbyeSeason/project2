@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>管家婆——支出类分析</title>
+
+    <!-- Favicon and touch icons -->
+    <link rel="shortcut icon" href="assets/img/book.png"/>
+
+    <!-- Css files -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/jquery.mmenu.css" rel="stylesheet">
+    <link href="assets/css/font-awesome.min.css" rel="stylesheet">
+    <link href="assets/plugins/jquery-ui/css/jquery-ui-1.10.4.min.css" rel="stylesheet">
+    <link href="assets/css/style.min.css" rel="stylesheet">
+    <link href="assets/css/add-ons.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+<!-- start: Header -->
+<div class="navbar" role="navigation">
+
+    <div class="container-fluid">
+
+        <ul class="nav navbar-nav navbar-actions navbar-left">
+            <li class="visible-md visible-lg"><a href="index.html#" id="main-menu-toggle"><i class="fa fa-th-large"></i></a>
+            </li>
+            <li class="visible-xs visible-sm"><a href="index.html#" id="sidebar-menu"><i class="fa fa-navicon"></i></a>
+            </li>
+        </ul>
+
+        <form class="navbar-form navbar-left">
+            <button type="submit" class="fa fa-search"></button>
+            <input type="text" class="form-control" placeholder="Search...">
+        </form>
+        <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown visible-md visible-lg">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bell-o"></i><span
+                        class="badge">3</span></a>
+                <ul class="dropdown-menu">
+                    <li class="dropdown-menu-header">
+                        <strong> 消息提示 </strong>
+                    </li>
+                    <li class="clearfix">
+                        <i class="fa fa-comment"></i>
+                        <a class="notification-user"> 系统 </a>
+                        <span class="notification-action"> 发来 </span>
+                        <a class="notification-link"> 提醒 </a>
+                    </li>
+                    <li class="clearfix">
+                        <i class="fa fa-pencil"></i>
+                        <a class="notification-user"> 你的成员 </a>
+                        <span class="notification-action"> 刚刚发表 </span>
+                        <a class="notification-link"> 动态 </a>
+                    </li>
+                    <li class="clearfix">
+                        <i class="fa fa-trash-o"></i>
+                        <a class="notification-user"> 你的成员 </a>
+                        <span class="notification-action"> 刚刚删除 <a href="#" class="notification-link"> 5笔账单 </a></span>
+                    </li>
+                    <li class="dropdown-menu-footer text-center">
+                        <a>查看所有消息</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="dropdown visible-md visible-lg">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img class="user-avatar"
+                                                                                src="assets/img/a.jpg" alt="user-mail">kikyo822@163.com</a>
+                <ul class="dropdown-menu">
+                    <li><a href="login.html"><i class="fa fa-sign-out"></i> 退出 </a></li>
+                </ul>
+            </li>
+            <li><a href="login.html"><i class="fa fa-power-off"></i></a></li>
+        </ul>
+
+    </div>
+
+</div>
+<!-- end: Header -->
+
+<!-- start: Main Menu -->
+<div class="sidebar ">
+
+    <div class="sidebar-collapse">
+        <div class="sidebar-header t-center">
+            <span><img width="45" height="55" class="text-logo" src="assets/img/logo7.png"></span>
+        </div>
+        <div class="sidebar-menu">
+            <ul class="nav nav-sidebar">
+                <li><a href="index.html"><i class="fa fa-pencil-square"></i><span class="text"> 记账 </span></a></li>
+                <li>
+                    <a href="#"><i class="fa fa-file-text"></i><span class="text"> 总览 </span> <span
+                            class="fa fa-angle-down pull-right"></span></a>
+                    <ul class="nav sub">
+                        <li><a href="maleallview.html"><i class="fa fa-male"></i><span class="text"> 个人总览</span></a>
+                        </li>
+                        <li><a href="homeallview.html"><i class="fa fa-home"></i><span class="text"> 家庭总览</span></a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-list-alt"></i><span class="text"> 报表</span> <span
+                            class="fa fa-angle-down pull-right"></span></a>
+                    <ul class="nav sub">
+                        <li><a href="home.html"><i class="fa fa-table"></i><span class="text"> 收支总表</span></a></li>
+                        <li><a href="out.html"><i class="fa fa-reorder"></i><span class="text"> 支出类分析</span></a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-cog"></i><span class="text"> 设置</span> <span
+                            class="fa fa-angle-down pull-right"></span></a>
+                    <ul class="nav sub">
+                        <li><a href="icenter.html"><i class="fa fa-info"></i><span class="text">个人中心</span></a></li>
+                        <li><a href="members.html"><i class="fa fa-ellipsis-h"></i><span class="text"> 成员管理</span></a>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="help.html"><i class="fa fa-question"></i><span class="text">帮助</span></a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="sidebar-footer">
+
+        <div class="sidebar-brand">
+            No.2 GROUP
+        </div>
+    </div>
+
+</div>
+<!-- end: Main Menu -->
+
+<!-- start: Content -->
+<div class="main ">
+
+    <div class="row">
+        <div class="col-lg-12">
+            <h3 class="page-header"><i class="fa fa-list-alt"></i> 报表 </h3>
+            <ol class="breadcrumb">
+                <li><i class="fa fa-reorder"></i><a href="out.html"> 支出类分析 </a></li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-4">
+            <i class="fa fa-calendar"></i> 日期：<input type="text" id="from"  style="width: 150px;height:30px;border-radius:2px;border:1px solid #BFBFBF"> <label> to </label> <input type="text" id="to" style="width: 150px;height:30px;border-radius:2px;border:1px solid #BFBFBF;white-space: nowrap">
+        </div>
+        <hr>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-4 col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h2><i class="fa fa-bar-chart-o red"></i><strong> 成员消费分布 </strong></h2>
+                </div>
+                <div class="panel-body white-bg">
+                    <br/>
+                    <div class="graph-container text-center">
+                        <div id="hero-donut" class="graph" style="height:236px;"></div>
+                    </div>
+                </div>
+            </div>
+        </div><!--/.col-->
+        <div class="col-lg-8 col-md-12">
+            <img src="assets/img/b.jpg" style="height: 310px;width: 800px;"/>
+        </div><!--/.col-->
+    </div><!--/.row-->
+
+    <div class="row">
+
+        <div class="col-sm-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h2><i class="fa fa-bar-chart-o red"></i><strong>TOP9 消费</strong></h2>
+                </div>
+                <div class="panel-body">
+                    <div class="browserStat">
+                        <img src="assets/img/car.png" style="height: 90px;">
+                        <span>34%</span>
+                    </div>
+                    <div class="browserStat">
+                        <img src="assets/img/Travel.png" style="height: 90px;">
+                        <span>34%</span>
+                    </div>
+                    <div class="browserStat">
+                        <img src="assets/img/Ecology_Oil.png" style="height: 90px;">
+                        <span>34%</span>
+                    </div>
+                    <br><br>
+                    <div class="browserStat">
+                        <img src="assets/img/food.png" style="height: 90px;">
+                        <span>34%</span>
+                    </div>
+                    <div class="browserStat">
+                        <img src="assets/img/clothes.png" style="height: 90px;">
+                        <span>34%</span>
+                    </div>
+                    <div class="browserStat">
+                        <img src="assets/img/water.png" style="height: 90px;">
+                        <span>34%</span>
+                    </div>
+                    <div class="browserStat">
+                        <img src="assets/img/computer.png" style="height: 90px;">
+                        <span>34%</span>
+                    </div>
+                    <div class="browserStat">
+                        <img src="assets/img/Chat.png" style="height: 90px;">
+                        <span>34%</span>
+                    </div>
+                    <div class="browserStat">
+                        <img src="assets/img/hospital.png" style="height: 90px;">
+                        <span>34%</span>
+                    </div>
+                </div>
+            </div>
+        </div><!--/col-->
+    </div>
+
+</div>
+<!-- end: Content -->
+
+</div><!--/container-->
+
+<div class="clearfix"></div>
+
+
+<!-- start: JavaScript-->
+
+<!--[if !IE]>-->
+
+<script src="assets/js/jquery-2.1.1.min.js"></script>
+
+<!--<![endif]-->
+
+<!--[if IE]>
+
+<script src="assets/js/jquery-1.11.1.min.js"></script>
+
+<![endif]-->
+
+<!--[if !IE]>-->
+
+<script type="text/javascript">
+    window.jQuery || document.write("<script src='assets/js/jquery-2.1.1.min.js'>" + "<" + "/script>");
+</script>
+
+<!--<![endif]-->
+
+<!--[if IE]>
+
+<script type="text/javascript">
+    window.jQuery || document.write("<script src='assets/js/jquery-1.11.1.min.js'>" + "<" + "/script>");
+</script>
+
+<![endif]-->
+<script src="assets/js/jquery-migrate-1.2.1.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+
+
+<!-- page scripts -->
+<script src="assets/plugins/jquery-ui/js/jquery-ui-1.10.4.min.js"></script>
+<script src="assets/plugins/touchpunch/jquery.ui.touch-punch.min.js"></script>
+<script src="assets/plugins/moment/moment.min.js"></script>
+<script src="assets/plugins/fullcalendar/js/fullcalendar.min.js"></script>
+<!--[if lte IE 8]>
+<script language="javascript" type="text/javascript" src="assets/plugins/excanvas/excanvas.min.js"></script>
+<![endif]-->
+<script src="assets/plugins/flot/jquery.flot.min.js"></script>
+<script src="assets/plugins/flot/jquery.flot.pie.min.js"></script>
+<script src="assets/plugins/flot/jquery.flot.stack.min.js"></script>
+<script src="assets/plugins/flot/jquery.flot.resize.min.js"></script>
+<script src="assets/plugins/flot/jquery.flot.time.min.js"></script>
+<script src="assets/plugins/flot/jquery.flot.spline.min.js"></script>
+<script src="assets/plugins/xcharts/js/xcharts.min.js"></script>
+<script src="assets/plugins/autosize/jquery.autosize.min.js"></script>
+<script src="assets/plugins/placeholder/jquery.placeholder.min.js"></script>
+<script src="assets/plugins/datatables/js/jquery.dataTables.min.js"></script>
+<script src="assets/plugins/datatables/js/dataTables.bootstrap.min.js"></script>
+<script src="assets/plugins/raphael/raphael.min.js"></script>
+<script src="assets/plugins/morris/js/morris.min.js"></script>
+<script src="assets/plugins/jvectormap/js/jquery-jvectormap-1.2.2.min.js"></script>
+<script src="assets/plugins/jvectormap/js/jquery-jvectormap-world-mill-en.js"></script>
+<script src="assets/plugins/jvectormap/js/gdp-data.js"></script>
+<script src="assets/plugins/gauge/gauge.min.js"></script>
+
+
+<!-- theme scripts -->
+<script src="assets/js/SmoothScroll.js"></script>
+<script src="assets/js/jquery.mmenu.min.js"></script>
+<script src="assets/js/core.min.js"></script>
+<script src="assets/plugins/d3/d3.min.js"></script>
+
+
+<!-- inline scripts related to this page -->
+<script src="assets/js/pages/index.js"></script>
+<script src="assets/js/pages/charts-flot.js"></script>
+
+<!-- end: JavaScript-->
+
+
+</body>
+</html>

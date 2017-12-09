@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>管家婆</title>
+
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="assets/img/book.png" rel="shortcut icon"/>
+
+
+</head>
+
+<body>
+
+<div class="container">
+
+
+    <div id="login">
+
+        <form action="zjh.hduzjh.cn/HouseKeeper/login-memberLogin" enctype='application/json' method="post">
+
+            <fieldset class="clearfix">
+
+                <p><span class="fontawesome-user"></span><input type="text" id="username" placeholder="Username"></p>
+                <!-- JS because of IE support; better: placeholder="Username" -->
+                <p><span class="fontawesome-lock"></span><input type="password" id="password" placeholder="Password"></p>
+                <!-- JS because of IE support; better: placeholder="Password" -->
+
+                <p><input id="post" type="submit" ></p>
+
+            </fieldset>
+
+        </form>
+        <p>没有账号? <a href="#" class="blue">注册一个吧</a><span class="fontawesome-arrow-right"></span></p>
+
+    </div>
+
+</div>
+<script src="./assets/js/jquery-2.1.1.min.js"></script>
+<script type="application/javascript" src="./assets/js/pages/login.js"></script>
+
+</body>
+</html>
