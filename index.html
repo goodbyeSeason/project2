@@ -60,14 +60,6 @@
         }
     </style>
     <script src="assets/js/jquery-2.1.1.min.js"></script>
-    <script>
-        $(document).ready(function () {
-            $("#itemId").change(function () {
-                var index = $(this).get(0).selectedIndex;
-                $('.subItemId').hide().eq(index).show();
-            });
-        });
-    </script>
 </head>
 
 <body>
@@ -205,68 +197,16 @@
                             <div class="col-md-3">
                                 <select id="itemId" name="select" class="form-control" size="1">
                                     <option>请选择</option>
-                                    <option>食品</option>
-                                    <option>衣服</option>
-                                    <option>交通</option>
-                                    <option>学习</option>
-                                    <option>医疗</option>
-                                    <option>其他</option>
                                 </select>
                                 <br>
                                 <select class="subItemId sub_first">
                                     <option>请选择子类</option>
-                                </select>
-
-                                <select class="subItemId">
-                                    <option>请选择子类</option>
-                                    <option>a1</option>
-                                    <option>a2</option>
-                                    <option>a3</option>
-                                    <option>a4</option>
-                                    <option>a5</option>
-                                </select>
-                                <select class="subItemId">
-                                    <option>请选择子类</option>
-                                    <option>b1</option>
-                                    <option>b2</option>
-                                    <option>b3</option>
-                                    <option>b4</option>
-                                    <option>b5</option>
-                                </select>
-                                <select class="subItemId">
-                                    <option>请选择子类</option>
-                                    <option>c1</option>
-                                    <option>c2</option>
-                                    <option>c3</option>
-                                    <option>c4</option>
-                                    <option>c5</option>
-                                </select>
-                                <select class="subItemId">
-                                    <option>请选择子类</option>
-                                    <option>d1</option>
-                                    <option>d2</option>
-                                    <option>d3</option>
-                                    <option>d4</option>
-                                    <option>d5</option>
-                                </select>
-                                <select class="subItemId">
-                                    <option>请选择子类</option>
-                                    <option>e1</option>
-                                    <option>e2</option>
-                                    <option>e3</option>
-                                    <option>e4</option>
-                                    <option>e5</option>
                                 </select>
                             </div>
                             <label class="col-md-1 control-label" for="selectaccountsin">账户</label>
                             <div class="col-md-3">
                                 <select id="selectaccountsin" name="select" class="form-control" size="1">
                                     <option value="0">请选择</option>
-                                    <option value="1">现金</option>
-                                    <option value="2">银行卡</option>
-                                    <option value="3">支付宝</option>
-                                    <option value="4">微信</option>
-                                    <option value="5">其他</option>
                                 </select>
                             </div>
                             <label class="col-md-1 control-label" for="selectmembersin">成员</label>
@@ -299,10 +239,10 @@
                                 <input type="text" class="form-control" placeholder="点此添加备注" id="remarksin">
                             </div>
                             <div class="col-lg-1">
-                                <button class="btn btn-primary" id="savein">保存</button>
                             </div>
-                        </div>
-                    </form>
+                          </div>
+                        </form>
+                        <button class="btn btn-primary savein" >保存</button>
                 </div>
             </div>
         </div><!--.col-->
@@ -327,21 +267,16 @@
                             <div class="col-md-3">
                                 <select id="selecttypesout" name="select" class="form-control" size="1">
                                     <option value="0">请选择</option>
-                                    <option value="1">工资</option>
-                                    <option value="2">股票分红</option>
-                                    <option value="3">他人转账</option>
-                                    <option value="4">其他</option>
+                                </select>
+                                </br>
+                                <select class="subItemId2 sub_first">
+                                  <option>请选择子类</option>
                                 </select>
                             </div>
                             <label class="col-md-1 control-label" for="selectaccountsout">账户</label>
                             <div class="col-md-3">
                                 <select id="selectaccountsout" name="select" class="form-control" size="1">
                                     <option value="0">请选择</option>
-                                    <option value="1">现金</option>
-                                    <option value="2">银行卡</option>
-                                    <option value="3">支付宝</option>
-                                    <option value="4">微信</option>
-                                    <option value="5">其他</option>
                                 </select>
                             </div>
                             <label class="col-md-1 control-label" for="selectmembersout">成员</label>
@@ -363,7 +298,7 @@
                             <div class="col-md-3">
                                 <input type="text" class="form-control" id="addrout">
                             </div>
-                            <label class="col-md-1 control-label">地点</label>
+                            <label class="col-md-1 control-label">时间</label>
                             <div class="col-md-3">
                                 <input type="text" class="form-control" id="timeout">
                             </div>
@@ -400,20 +335,8 @@
 
 <!--<![endif]-->
 
-
-<!--[if !IE]>-->
-
-<script type="text/javascript">
-    window.jQuery || document.write("<script src='assets/js/jquery-2.1.1.min.js'>" + "<" + "/script>");
-</script>
-
-<!--<![endif]-->
-
 <!--[if IE]>
 
-<script type="text/javascript">
-    window.jQuery || document.write("<script src='assets/js/jquery-1.11.1.min.js'>" + "<" + "/script>");
-</script>
 
 <![endif]-->
 <script src="assets/js/jquery-migrate-1.2.1.min.js"></script>
