@@ -17,6 +17,8 @@
     <link href="assets/css/style.min.css" rel="stylesheet">
     <link href="assets/css/add-ons.min.css" rel="stylesheet">
 
+    <script src="assets/js/echarts.simple.min.js"></script>
+
 </head>
 
 <body>
@@ -146,8 +148,7 @@
 
     <div class="row">
         <div class="col-lg-4">
-            <p class="right"><i class="fa fa-calendar"></i> 日期：<input type="text" id="datepicker"
-                                                                      style="width: 200px;height:30px;border-radius:1px;border:1px solid #BFBFBF">
+            <p class="right"><i class="fa fa-calendar"></i> 日期：<input type="text" id="datepicker" style="width: 200px;height:30px;border-radius:1px;border:1px solid #BFBFBF">
             </p>
         </div>
     </div>
@@ -160,7 +161,7 @@
                     <h2><i class="fa fa-signal red"></i><span class="break"></span><strong> 日常收支图 </strong></h2>
                 </div>
                 <div class="panel-body">
-                    <div id="stackchart" class="center" style="height:300px;"></div>
+                    <div id="barGraph" class="center" style="height:300px;"></div>
                 </div>
             </div>
 
@@ -252,16 +253,11 @@
 
 <!--[if !IE]>-->
 
+<script src="assets/js/echarts.min.js"></script>
+
 <script src="assets/js/jquery-2.1.1.min.js"></script>
 <script src="assets/js/jquery-ui.js"></script>
-<script type="text/javascript">
-    $(function () {
-        $("#datepicker").datepicker({
-            showOtherMonths: true,
-            selectOtherMonths: true
-        });
-    });
-</script>
+
 
 <!--<![endif]-->
 
@@ -285,6 +281,7 @@
 
 <!-- inline scripts related to this page -->
 <script src="assets/js/pages/allview.js"></script>
+<script src="assets/js/pages/maleallview.js"></script>
 
 <!-- end: JavaScript-->
 

@@ -22,6 +22,52 @@
     <link href="assets/css/style.min.css" rel="stylesheet">
     <link href="assets/css/add-ons.min.css" rel="stylesheet">
 
+    <style>
+        .subItemId {
+            display: none;
+            width: 100%;
+            height: 34px;
+            padding: 6px 12px;
+            font-size: 14px;
+            line-height: 1.42857143;
+            color: #555;
+            background-color: #fff;
+            background-image: none;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+            -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+            transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s
+        }
+
+        .sub_first {
+            display: block;
+            width: 100%;
+            height: 34px;
+            padding: 6px 12px;
+            font-size: 14px;
+            line-height: 1.42857143;
+            color: #555;
+            background-color: #fff;
+            background-image: none;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+            -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+            transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s
+        }
+    </style>
+    <script src="assets/js/jquery-2.1.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#itemId").change(function () {
+                var index = $(this).get(0).selectedIndex;
+                $('.subItemId').hide().eq(index).show();
+            });
+        });
+    </script>
 </head>
 
 <body>
@@ -72,7 +118,8 @@
                 </ul>
             </li>
             <li class="dropdown visible-md visible-lg">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img class="user-avatar" src="assets/img/a.jpg" alt="user-mail">kikyo822@163.com</a>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img class="user-avatar"
+                                                                                src="assets/img/a.jpg" alt="user-mail">kikyo822@163.com</a>
                 <ul class="dropdown-menu">
                     <li><a href="login.html"><i class="fa fa-sign-out"></i> 退出 </a></li>
                 </ul>
@@ -141,7 +188,7 @@
 
     <div class="row">
         <div class="col-lg-12">
-            <h3 class="page-header"><i class="fa fa-pencil-square"></i> 收入 </h3>
+            <h3 class="page-header"><i class="fa fa-pencil-square"></i> 支出 </h3>
         </div>
     </div>
 
@@ -154,16 +201,61 @@
                 <div class="panel-body">
                     <form class="form-horizontal" role="form">
                         <div class="form-group">
-                            <label class="col-md-1 control-label" for="selecttypesin">分类</label>
+                            <label class="col-md-1 control-label" for="itemId">分类</label>
                             <div class="col-md-3">
-                                <select id="selecttypesin" name="select" class="form-control" size="1">
-                                    <option value="0">请选择</option>
-                                    <option value="1">食品</option>
-                                    <option value="2">交通</option>
-                                    <option value="3">学习</option>
-                                    <option value="4">医疗</option>
-                                    <option value="5">娱乐</option>
-                                    <option value="6">其他</option>
+                                <select id="itemId" name="select" class="form-control" size="1">
+                                    <option>请选择</option>
+                                    <option>食品</option>
+                                    <option>衣服</option>
+                                    <option>交通</option>
+                                    <option>学习</option>
+                                    <option>医疗</option>
+                                    <option>其他</option>
+                                </select>
+                                <br>
+                                <select class="subItemId sub_first">
+                                    <option>请选择子类</option>
+                                </select>
+
+                                <select class="subItemId">
+                                    <option>请选择子类</option>
+                                    <option>a1</option>
+                                    <option>a2</option>
+                                    <option>a3</option>
+                                    <option>a4</option>
+                                    <option>a5</option>
+                                </select>
+                                <select class="subItemId">
+                                    <option>请选择子类</option>
+                                    <option>b1</option>
+                                    <option>b2</option>
+                                    <option>b3</option>
+                                    <option>b4</option>
+                                    <option>b5</option>
+                                </select>
+                                <select class="subItemId">
+                                    <option>请选择子类</option>
+                                    <option>c1</option>
+                                    <option>c2</option>
+                                    <option>c3</option>
+                                    <option>c4</option>
+                                    <option>c5</option>
+                                </select>
+                                <select class="subItemId">
+                                    <option>请选择子类</option>
+                                    <option>d1</option>
+                                    <option>d2</option>
+                                    <option>d3</option>
+                                    <option>d4</option>
+                                    <option>d5</option>
+                                </select>
+                                <select class="subItemId">
+                                    <option>请选择子类</option>
+                                    <option>e1</option>
+                                    <option>e2</option>
+                                    <option>e3</option>
+                                    <option>e4</option>
+                                    <option>e5</option>
                                 </select>
                             </div>
                             <label class="col-md-1 control-label" for="selectaccountsin">账户</label>
@@ -218,7 +310,7 @@
 
     <div class="row">
         <div class="col-lg-12">
-            <h3 class="page-header"><i class="fa fa-pencil-square"></i> 支出 </h3>
+            <h3 class="page-header"><i class="fa fa-pencil-square"></i> 收入 </h3>
         </div>
     </div>
 
@@ -308,11 +400,6 @@
 
 <!--<![endif]-->
 
-<!--[if IE]>
-
-<script src="assets/js/jquery-1.11.1.min.js"></script>
-
-<![endif]-->
 
 <!--[if !IE]>-->
 

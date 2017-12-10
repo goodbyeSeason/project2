@@ -28,7 +28,6 @@ $(document).ready(function(){
 		formatter: function (y) { return y + "%" }
 	});
 
-});
 $(function () {
     $("#savein").click(function () {
         var time = $("#timein").val();
@@ -97,3 +96,5 @@ $(function () {
         return false;
     })
 })
+
+});
