@@ -129,7 +129,7 @@ $(document).ready(function(){
       url: 'http://zjh.hduzjh.cn/HouseKeeper/cash-save',
       dataType: 'json',
       data: {
-        which: "i",
+        which: "s",
         time: time,//注意日期格式
         site: site,
         people:'',
@@ -163,7 +163,7 @@ $(document).ready(function(){
       url: 'http://zjh.hduzjh.cn/HouseKeeper/cash-save',
       dataType: 'json',
       data: {
-        which: 's',
+        which: 'i',
         time: time,//注意日期格式
         site: site,
         people:'',
