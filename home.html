@@ -158,7 +158,7 @@
                     <h2><i class="fa fa-link red"></i><span class="break"></span><strong> 收支趋势图 </strong></h2>
                 </div>
                 <div class="panel-body">
-                    <div id="dotChart" style="height:300px"></div>
+                    <div id="lineChart" style="height:300px"></div>
                 </div>
             </div>
         </div><!--/col-->
@@ -185,42 +185,6 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr>
-                            <td class="center">2017.9.2</td>
-                            <td class="center">-20</td>
-                            <td class="center">张家豪</td>
-                            <td class="center">金拱门</td>
-                            <td class="center">冰淇淋</td>
-                            <td class="center">饮食</td>
-                            <td class="center">——</td>
-                        </tr>
-                        <tr>
-                            <td class="center">2017.9.2</td>
-                            <td class="center">-20</td>
-                            <td class="center">张家豪</td>
-                            <td class="center">金拱门</td>
-                            <td class="center">冰淇淋</td>
-                            <td class="center">饮食</td>
-                            <td class="center">——</td>
-                        </tr>
-                        <tr>
-                            <td class="center">2017.9.2</td>
-                            <td class="center">-20</td>
-                            <td class="center">张家豪</td>
-                            <td class="center">金拱门</td>
-                            <td class="center">冰淇淋</td>
-                            <td class="center">饮食</td>
-                            <td class="center">——</td>
-                        </tr>
-                        <tr>
-                            <td class="center">2017.9.2</td>
-                            <td class="center">-20</td>
-                            <td class="center">张家豪</td>
-                            <td class="center">金拱门</td>
-                            <td class="center">冰淇淋</td>
-                            <td class="center">饮食</td>
-                            <td class="center">——</td>
-                        </tr>
                         </tbody>
                     </table>
                 </div>
@@ -236,49 +200,15 @@
 
 <!-- start: JavaScript-->
 
+<script src="assets/js/echarts.simple.min.js"></script>
+
 <!--[if !IE]>-->
 
 <script src="assets/js/jquery-2.1.1.min.js"></script>
 
 <!--<![endif]-->
 
-
-<!--datepicker>-->
-
-<script src="assets/js/jquery-ui.js"></script>
-<script type="text/javascript">
-    $( function() {
-        var dateFormat = "mm/dd/yy",
-            from = $( "#from" )
-                .datepicker({
-                    defaultDate: "+1w",
-                    changeMonth: true,
-                    numberOfMonths: 2
-                })
-                .on( "change", function() {
-                    to.datepicker( "option", "minDate", getDate( this ) );
-                }),
-            to = $( "#to" ).datepicker({
-                defaultDate: "+1w",
-                changeMonth: true,
-                numberOfMonths: 2
-            })
-                .on( "change", function() {
-                    from.datepicker( "option", "maxDate", getDate( this ) );
-                });
-
-        function getDate( element ) {
-            var date;
-            try {
-                date = $.datepicker.parseDate( dateFormat, element.value );
-            } catch( error ) {
-                date = null;
-            }
-
-            return date;
-        }
-    } );
-</script>
+<script src="assets/js/jquer-ui.js"></script>
 
 <!--end>-->
 

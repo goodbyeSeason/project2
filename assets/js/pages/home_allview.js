@@ -1,6 +1,8 @@
 $(document).ready(function () {
 
     /* ------ datepicker ------ */
+
+    $( function() {
         from = $( "#from" )
             .datepicker({
                 defaultDate: "+1w",
@@ -9,7 +11,7 @@ $(document).ready(function () {
             })
             .on( "change", function() {
                 to.datepicker( "option", "minDate", getDate( this ) );
-            });
+            }),
             to = $( "#to" ).datepicker({
                 defaultDate: "+1w",
                 changeMonth: true,
@@ -29,55 +31,56 @@ $(document).ready(function () {
 
             return date;
         }
+    } );
 
-    /* ---------- Chart with points ---------- */
+    /* ---------- Stack chart ---------- */
 
-    var lineChart = echarts.init(document.getElementById('lineChart'));
+    var barGraph = echarts.init(document.getElementById('barGraph'));
 
-    var option = {
-        title: {
-            text: '个人一年支出统计',
-        },
-        tooltip: {
+    option = {
+        color: ['#0567'],
+        tooltip : {
             trigger: 'axis',
-            axisPointer: {
-                type: 'cross'
+            axisPointer : {            // 坐标轴指示器，坐标轴触发有效
+                type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
             }
         },
-        toolbox: {
-            show: true,
-            feature: {
-                saveAsImage: {}
-            }
+        grid: {
+            left: '3%',
+            right: '4%',
+            bottom: '3%',
+            containLabel: true
         },
-        xAxis: {
-            type: 'category',
-            boundaryGap: false,
-            data: ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月']
-        },
-        yAxis: {
-            type: 'value',
-            axisLabel: {
-                formatter: '{value} k'
-            },
-            axisPointer: {
-                snap: true
-            }
-        },
-        color: 'black',
-        series: [
+        xAxis : [
             {
-                name: '支出金额',
-                type: 'line',
-                smooth: true,
-                data: [3, 2.8, 2.5, 2.6, 2.7, 3, 5.5, 5, 4, 3.9, 3.8, 3.9],
+                type : 'category',
+                data : ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月'],
+                axisTick: {
+                    alignWithLabel: true
+                }
+            }
+        ],
+        yAxis : [
+            {
+                type : 'value',
+                axisLabel: {
+                    formatter: '{value} k'
+                },
+            }
+        ],
+        series : [
+            {
+                name:'支出总览',
+                type:'bar',
+                barWidth: '60%',
+                data:[1, 5.2, 2, 3.34, 3.9, 3.3, 2.2,2.6,5.3,4.02,3.6,2.1]
             }
         ]
     };
+    barGraph.setOption(option);
 
-    lineChart.setOption(option);
 
-    /* ------- table ------- */
+    /* ------- in table ------- */
 
     function GetMultiLineSelectTable(tableId, selectIds) {
         var table = $(tableId);
@@ -147,6 +150,8 @@ $(document).ready(function () {
         }
         return jsondata;
     }
+
+    /* ------out table -----*/
 
     function GetMultiLineSelectTable(tableId, selectIds) {
         var table = $(tableId);
