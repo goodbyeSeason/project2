@@ -195,20 +195,4 @@ $(document).ready(function(){
 	  $(this).tab('show');
 	}); 
 
-	
-	/*------- Moris Chart -------*/
-	Morris.Donut({
-		element: 'hero-donut',
-		data: [
-			{label: '张家豪', value: 60 },
-			{label: '俞有成', value: 30 },
-	      	{label: '吴伟伟', value: 10 },
-	    ],
-		colors: ["#36A9E1", "#d1b993", "#bdea74"],
-		formatter: function (y) { return y + "%" }
-	});
-
-
-
-
 });

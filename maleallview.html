@@ -16,6 +16,9 @@
     <link href="assets/plugins/jquery-ui/css/jquery-ui-1.10.4.min.css" rel="stylesheet">
     <link href="assets/css/style.min.css" rel="stylesheet">
     <link href="assets/css/add-ons.min.css" rel="stylesheet">
+    <link href="assets/css/jquery-ui.css" rel="stylesheet" />
+    <link href="assets/css/jquery.datetimepicker.css" rel="stylesheet"/>
+
 
     <script src="assets/js/echarts.simple.min.js"></script>
 
@@ -147,13 +150,6 @@
     </div>
 
     <div class="row">
-        <div class="col-lg-4">
-            <p class="right"><i class="fa fa-calendar"></i> 日期：<input type="text" id="datepicker" style="width: 200px;height:30px;border-radius:1px;border:1px solid #BFBFBF">
-            </p>
-        </div>
-    </div>
-
-    <div class="row">
 
         <div class="col-sm-12">
             <div class="panel panel-default">
@@ -168,6 +164,7 @@
         </div><!--/col-->
 
     </div><!--/row-->
+
     <div class="row">
 
         <div class="col-lg-12">
@@ -182,6 +179,14 @@
         </div><!--/col-->
 
     </div><!--/row-->
+
+    <div class="row">
+        <div class="col-lg-4">
+            <p class="right"><i class="fa fa-calendar"></i> 日期：<input type="text" id="date_time_picker" style="width: 150px;height:30px;border-radius:1px;border:1px solid #BFBFBF;line-height: 30px">
+            </p>
+        </div>
+    </div>
+
     <div class="row">
         <div class="col-lg-12">
             <div class="panel panel-default">
@@ -198,6 +203,7 @@
                             <th data-field="accounts">收入账户</th>
                             <th data-field="item">收入分类</th>
                             <th data-field="remark">收入备注</th>
+                            <th data-field="control">操作</th>
                         </tr>
                         </thead>
                         <tbody></tbody>
@@ -232,6 +238,7 @@
                     <th data-field="accounts">支出账户</th>
                     <th data-field="item">支出分类</th>
                     <th data-field="remark">支出备注</th>
+                    <th>操作</th>
                 </tr>
                 </thead>
                 <tbody></tbody>
@@ -256,6 +263,7 @@
 <!--[if !IE]>-->
 
 <script src="assets/js/jquer-ui.js"></script>
+<script src="assets/js/jquery.datetimepicker.js"></script>
 
 <!--<![endif]-->
 

@@ -1,34 +1,34 @@
 $(document).ready(function () {
 
-    /* ------ datepicker ------ */
+    /* ------ date time picker ------ */
+    $( function() {
         from = $( "#from" )
-            .datepicker({
+            .datetimepicker({
                 defaultDate: "+1w",
                 changeMonth: true,
-                dateFormat:"yy-mm-dd"
             })
             .on( "change", function() {
-                to.datepicker( "option", "minDate", getDate( this ) );
-            });
-            to = $( "#to" ).datepicker({
+                to.datetimepicker( "option", "minDate", getDate( this ) );
+            }),
+            to = $( "#to" ).datetimepicker({
                 defaultDate: "+1w",
                 changeMonth: true,
-                dateFormat:"yy-mm-dd"
             })
                 .on( "change", function() {
-                    from.datepicker( "option", "maxDate", getDate( this ) );
+                    from.datetimepicker( "option", "maxDate", getDate( this ) );
                 });
 
         function getDate( element ) {
             var date;
             try {
-                date = $.datepicker.parseDate( dateFormat, element.value );
+                date = $.datetimepicker.parseDate( dateFormat, element.value );
             } catch( error ) {
                 date = null;
             }
 
             return date;
         }
+    } );
 
     /* ---------- Chart with points ---------- */
 

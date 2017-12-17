@@ -4,27 +4,25 @@ $(document).ready(function () {
 
     $( function() {
         from = $( "#from" )
-            .datepicker({
+            .datetimepicker({
                 defaultDate: "+1w",
                 changeMonth: true,
-                dateFormat:"yy-mm-dd"
             })
             .on( "change", function() {
-                to.datepicker( "option", "minDate", getDate( this ) );
+                to.datetimepicker( "option", "minDate", getDate( this ) );
             }),
-            to = $( "#to" ).datepicker({
+            to = $( "#to" ).datetimepicker({
                 defaultDate: "+1w",
                 changeMonth: true,
-                dateFormat:"yy-mm-dd"
             })
                 .on( "change", function() {
-                    from.datepicker( "option", "maxDate", getDate( this ) );
+                    from.datetimepicker( "option", "maxDate", getDate( this ) );
                 });
 
         function getDate( element ) {
             var date;
             try {
-                date = $.datepicker.parseDate( dateFormat, element.value );
+                date = $.datetimepicker.parseDate( dateFormat, element.value );
             } catch( error ) {
                 date = null;
             }
@@ -35,7 +33,7 @@ $(document).ready(function () {
 
     /* ---------- Stack chart ---------- */
 
-    var barGraph = echarts.init(document.getElementById('barGraph'));
+    var barGraph = echarts.init(document.getElementById('barGraph_home'));
 
     option = {
         color: ['#0567'],
