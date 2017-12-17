@@ -102,7 +102,18 @@ $(document).ready(function () {
 
 
     /* ------- in table ------- */
-
+	function add0(m){return m<10?'0'+m:m }
+	function format(shijianchuo)
+	{
+		var time = new Date(shijianchuo);
+		var y = time.getFullYear();
+		var m = time.getMonth()+1;
+		var d = time.getDate();
+		var h = time.getHours();
+		var mm = time.getMinutes();
+		var s = time.getSeconds();
+		return y+'-'+add0(m)+'-'+add0(d)+' '+add0(h)+':'+add0(mm)+':'+add0(s);
+	}
     function getData(i) {
         console.log('getData')
         var in_url = 'http://zjh.hduzjh.cn/HouseKeeper/cash-memberQuery';
@@ -123,7 +134,7 @@ $(document).ready(function () {
               for (const item of json) {
                 tbody.append(`
                 <tr>
-                    <td>${item.id.time}</td>
+                    <td>${format(item.id.time)}</td>
                     <td>${item.id.money}</td>
                     <td>${item.id.site}</td>
                     <td>${item.id.accountName}</td>
@@ -135,31 +146,6 @@ $(document).ready(function () {
             }).fail(function () {
             alert("Err");
         });
-    }
-
-//格式化JSON数据，比如日期
-    function formatJsonData(jsondata) {
-        if (jsondata == null) {
-            return '';
-        }
-        else if (/\/Date\(\d+\)/.exec(jsondata)) {
-            var date = new Date(parseInt(jsondata.replace("/Date(", "").replace(")/", ""), 10));
-            return date.toLocaleString();
-        }
-        return jsondata;
-    }
-
-
-//格式化JSON数据，比如日期
-    function formatJsonData(jsondata) {
-        if (jsondata == null) {
-            return '';
-        }
-        else if (/\/Date\(\d+\)/.exec(jsondata)) {
-            var date = new Date(parseInt(jsondata.replace("/Date(", "").replace(")/", ""), 10));
-            return date.toLocaleString();
-        }
-        return jsondata;
     }
     getData('i');
     getData('o')
