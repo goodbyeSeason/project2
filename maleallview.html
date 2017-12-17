@@ -194,7 +194,6 @@
                         <tr>
                             <th data-field="time">收入时间</th>
                             <th data-field="money">收入金额</th>
-                            <th data-field="people">收入成员</th>
                             <th data-field="position">收入地点</th>
                             <th data-field="accounts">收入账户</th>
                             <th data-field="item">收入分类</th>
@@ -229,7 +228,6 @@
                 <tr>
                     <th data-field="time">支出时间</th>
                     <th data-field="money">支出金额</th>
-                    <th data-field="people">支出成员</th>
                     <th data-field="position">支出地点</th>
                     <th data-field="accounts">支出账户</th>
                     <th data-field="item">支出分类</th>
@@ -251,20 +249,12 @@
 
 
 <!-- start: JavaScript-->
-<script>
-    jQuery(document).ready(function ($) {
-        GetMultiLineSelectTable("#inTable");
-    });
-    jQuery(document).ready(function ($) {
-        GetMultiLineSelectTable("#outTable");
-    });
-</script>
+<script src="assets/js/jquery-2.1.1.min.js"></script>
 
 <script src="assets/js/echarts.simple.min.js"></script>
 
 <!--[if !IE]>-->
 
-<script src="assets/js/jquery-2.1.1.min.js"></script>
 <script src="assets/js/jquer-ui.js"></script>
 
 <!--<![endif]-->
