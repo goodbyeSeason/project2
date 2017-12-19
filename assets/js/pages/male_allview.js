@@ -2,7 +2,9 @@ $(document).ready(function () {
 
     /* -------date time picker ------*/
 
-    $('#date_time_picker').datetimepicker();
+    $('#date_time_picker1').datetimepicker();
+
+    $('#date_time_picker2').datetimepicker();
 
     /* ---------- Chart with points ---------- */
     var dotChart = echarts.init(document.getElementById('dotChart'));
