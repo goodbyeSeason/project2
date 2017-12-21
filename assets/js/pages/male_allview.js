@@ -139,6 +139,7 @@ $(document).ready(function () {
                     <td>${item.id.money}</td>
                     <td>${item.id.site}</td>
                     <td>${item.id.accountName}</td>
+                    <td>${item.id.account_balance}</td>
                     <td>${item.id.itemName}</td>
                     <td>${item.id.remark}</td>
                     <td>${item.id.control}</td>

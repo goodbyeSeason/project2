@@ -3,7 +3,7 @@ $(document).ready(function () {
     /* ------ datepicker ------ */
 
     $( function() {
-        from = $( "#from" )
+        from = $( ".from" )
             .datetimepicker({
                 defaultDate: "+1w",
                 changeMonth: true,
@@ -11,7 +11,7 @@ $(document).ready(function () {
             .on( "change", function() {
                 to.datetimepicker( "option", "minDate", getDate( this ) );
             }),
-            to = $( "#to" ).datetimepicker({
+            to = $( ".to" ).datetimepicker({
                 defaultDate: "+1w",
                 changeMonth: true,
             })
@@ -35,46 +35,34 @@ $(document).ready(function () {
 
     var barGraph = echarts.init(document.getElementById('barGraph_home'));
 
-    option = {
-        color: ['#0567'],
-        tooltip : {
-            trigger: 'axis',
-            axisPointer : {            // 坐标轴指示器，坐标轴触发有效
-                type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
-            }
+option = {
+    backgroundColor: '#eee',
+    brush: {
+        xAxisIndex: 0
+    },
+    tooltip: {},
+    xAxis: {
+        data: ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月'],
+        name: '月份',
+        silent: false
+    },
+    yAxis: {
+        axisLabel: {
+            formatter: '{value}k'
         },
-        grid: {
-            left: '3%',
-            right: '4%',
-            bottom: '3%',
-            containLabel: true
-        },
-        xAxis : [
-            {
-                type : 'category',
-                data : ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月'],
-                axisTick: {
-                    alignWithLabel: true
-                }
-            }
-        ],
-        yAxis : [
-            {
-                type : 'value',
-                axisLabel: {
-                    formatter: '{value} k'
-                },
-            }
-        ],
-        series : [
-            {
-                name:'支出总览',
-                type:'bar',
-                barWidth: '60%',
-                data:[1, 5.2, 2, 3.34, 3.9, 3.3, 2.2,2.6,5.3,4.02,3.6,2.1]
-            }
-        ]
-    };
+        inverse: false,
+        splitArea: {
+            show: false
+        }
+    },
+    grid: {
+        left: 100
+    },
+    series: [{
+        type: 'bar',
+        data: [1, 3, -2, 8, 9, 5, 4, 2, 6, -3, 1, 2]
+    }]
+};
     barGraph.setOption(option);
 
 
@@ -135,18 +123,6 @@ $(document).ready(function () {
             }).fail(function () {
             alert("Err");
         });
-    }
-
-//格式化JSON数据，比如日期
-    function formatJsonData(jsondata) {
-        if (jsondata == null) {
-            return '';
-        }
-        else if (/\/Date\(\d+\)/.exec(jsondata)) {
-            var date = new Date(parseInt(jsondata.replace("/Date(", "").replace(")/", ""), 10));
-            return date.toLocaleString();
-        }
-        return jsondata;
     }
 
     /* ------out table -----*/
