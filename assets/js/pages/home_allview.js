@@ -121,7 +121,7 @@ lineChart.setOption(option);
 
 function GetMultiLineSelectTableIn(tableId, selectIds) {
     var table = $(tableId);
-    var url = 'http://zjh.hduzjh.cn/HouseKeeper/cash-inSave';
+    var url = 'http://zjh.hduzjh.cn/HouseKeeper/cash-save';
     var ischeckbox = false;
     //获取数据项名称
     var fileds = new Array();
@@ -179,7 +179,7 @@ function GetMultiLineSelectTableIn(tableId, selectIds) {
 
 function GetMultiLineSelectTableOut(tableId, selectIds) {
     var table = $(tableId);
-    var url = 'http://zjh.hduzjh.cn/HouseKeeper/cash-outSave';
+  var url = 'http://zjh.hduzjh.cn/HouseKeeper/cash-save';
     var ischeckbox = false;
     //获取数据项名称
     var fileds = new Array();

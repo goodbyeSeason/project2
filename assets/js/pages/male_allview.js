@@ -5,7 +5,7 @@ $(document).ready(function () {
     $('#date_time_picker1').datetimepicker();
 
     $('#date_time_picker2').datetimepicker();
-
+    
     $('.sel').change(getMapData)
     /* ---------- Chart with points ---------- */
     var dotChart = echarts.init(document.getElementById('dotChart'));
@@ -121,7 +121,22 @@ $(document).ready(function () {
         var s = time.getSeconds();
         return y + '-' + add0(m) + '-' + add0(d) + ' ' + add0(h) + ':' + add0(mm) + ':' + add0(s);
     }
-
+    function deleteData(id, i) {
+      $.ajax({
+        url: 'http://zjh.hduzjh.cn/HouseKeeper/operator-delete',
+        type: 'post',
+        data: {
+          which: 'c' + i,
+          id: id
+        }
+      })
+        .done(function (res) {
+          if (res.status === 200) {
+            getData(i)
+            alert("删除成功")
+          }
+        })
+    }
     function getData(i) {
         var memberId = localStorage.memberId;
         var url = 'http://zjh.hduzjh.cn/HouseKeeper/cash-query';
@@ -137,7 +152,8 @@ $(document).ready(function () {
             .done(function (json) {
                 //向表格内新增内容
                 var tbody = i === 'i' ? $("#inTable tbody") : $("#outTable tbody");
-                for (const item of json.data) {
+                tbody.empty()
+                for (const [index, item] of json.data.entries()) {
                     tbody.append(`
                 <tr>
                     <td>${format(item.time)}</td>
@@ -147,8 +163,25 @@ $(document).ready(function () {
                     <td>${item.balance}</td>
                     <td>${item.item}</td>
                     <td>${item.remark}</td>
+                    <td>
+                      <button class="btn btn-primary edit"  data-toggle="modal" data-target="#myModal">编辑</button>
+                      <button class="btn btn-danger delete">删除</button>
+                    </td>
                 </tr>
               `)
+                $(".delete").eq(index).on("click",function(){
+                  deleteData(item.id, i)
+                });
+                $(".edit").eq(index).on("click",function(){
+                  $("#time").val(format(item.time))
+                  $("#money").val(item.money)
+                  $("#site").val(item.site)
+                  $("#account").val(item.account)
+                  $("#balance").val(item.balance)
+                  $("#item").val(item.item)
+                  $("#remark").val(item.remark)
+                });
+                // $(".edit").eq(index).on("click", edit(item.id, i));
                 }
             }).fail(function () {
             alert("Err");
