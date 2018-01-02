@@ -47,21 +47,14 @@ $(document).ready(function () {
                 type: 'line',
                 smooth: true,
                 data: [3, 2.8, 2.5, 2.6, 2.7, 3, 5.5, 5, 4, 3.9, 3.8, 3.9],
-<<<<<<< HEAD
                 color:'red'
-=======
->>>>>>> 0c21eaff7f11bc834343e4e17e8a628823e47bf4
             },
             {
                 name: '收入金额',
                 type: 'line',
                 smooth: true,
-<<<<<<< HEAD
                 data: [1, 3, 2, 2.3, 1.2, 4, 2.2, 2.6, 5.3, 3, 3.6, 2.1],
                 color:'green'
-=======
-                data: [3, 2.8, 2.5, 2.6, 2.7, 3, 5.5, 5, 4, 3.9, 3.8, 3.9],
->>>>>>> 0c21eaff7f11bc834343e4e17e8a628823e47bf4
             }
         ]
     };
