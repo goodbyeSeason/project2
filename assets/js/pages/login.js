@@ -4,14 +4,16 @@ $(function () {
         var password = $("#password").val();
         $.ajax({
             type:'post',
-            url: 'http://zjh.hduzjh.cn/HouseKeeper/login-memberLogin',
+            url: 'http://zjh.hduzjh.cn/HouseKeeper/login-login',
             data:{
+                "which": "m",
                 "username": username,
                 "password": password
             },
             success:function (res) {
-                alert(res)
-                window.location.href = "index.html"
+              localStorage.memberId = res.data.id.memberId;
+              console.log(localStorage.memberId);
+              window.location.href = "index.html";
             },
             error:function (err) {
                 alert(err)

@@ -9,13 +9,13 @@ $(document).ready(function(){
     }
     $.ajax({
       type: 'post',
-      url: 'http://zjh.hduzjh.cn/HouseKeeper/item-get',
+      url: 'http://zjh.hduzjh.cn/HouseKeeper/item-query',
       dataType: 'json',
       data: data,
       success: function(res) {
         console.log(res)
         var $firstSelect = $("#itemId");
-        for (const item of res) {
+        for (const item of res.data) {
           var option = "<option value=" + item.itemId + ">" + item.itemName + "</option>"
           $firstSelect.append(option)
         }
@@ -29,13 +29,13 @@ $(document).ready(function(){
     }
     $.ajax({
       type: 'post',
-      url: 'http://zjh.hduzjh.cn/HouseKeeper/item-get',
+      url: 'http://zjh.hduzjh.cn/HouseKeeper/item-query',
       dataType: 'json',
       data: data,
       success: function (res) {
         console.log(res)
         var $outSelect = $("#selecttypesout");
-        for (const item of res) {
+        for (const item of res.data) {
           var option = "<option value=" + item.itemId + ">" + item.itemName + "</option>"
           $outSelect.append(option)
         }
@@ -55,7 +55,7 @@ $(document).ready(function(){
         console.log(res)
         var $accountSelect = $("#selectaccountsin");
         var $accountSelect2 = $("#selectaccountsout");
-        for (const item of res) {
+        for (const item of res.data) {
           var option = "<option value=" + item.accountId + ">" + item.accountName + "</option>"
           $accountSelect.append(option)
           $accountSelect2.append(option)
@@ -73,19 +73,18 @@ $(document).ready(function(){
     var itemId = $("#itemId").val();
     $.ajax({
       type: 'post',
-      url: 'http://zjh.hduzjh.cn/HouseKeeper/item-get',
+      url: 'http://zjh.hduzjh.cn/HouseKeeper/item-query',
       dataType: 'json',
       data: {
-        which: "s",
-        type: '',
-        itemId: itemId
+        which: "o",
+        id: itemId
       },
       success: function (res) {
         console.log(res)
         var $secondSelect = $(".subItemId");
         $secondSelect.empty();
         $secondSelect.append("<option>请选择子类</option>")
-        for (const item of res) {
+        for (const item of res.data) {
           var option = "<option value=" + item.id.subitemId + ">" + item.id.subitemName + "</option>"
           $secondSelect.append(option)
         }
@@ -96,19 +95,18 @@ $(document).ready(function(){
     var itemId = $("#selecttypesout").val();
     $.ajax({
       type: 'post',
-      url: 'http://zjh.hduzjh.cn/HouseKeeper/item-get',
+      url: 'http://zjh.hduzjh.cn/HouseKeeper/item-query',
       dataType: 'json',
       data: {
-        which: "s",
-        type: '',
-        itemId: itemId
+        which: "0",
+        id: itemId
       },
       success: function (res) {
         console.log(res)
         var $secondSelect = $(".subItemId2");
         $secondSelect.empty();
         $secondSelect.append("<option>请选择子类</option>")
-        for (const item of res) {
+        for (const item of res.data) {
           var option = "<option value=" + item.id.subitemId + ">" + item.id.subitemName + "</option>"
           $secondSelect.append(option)
         }
@@ -129,8 +127,8 @@ $(document).ready(function(){
       url: 'http://zjh.hduzjh.cn/HouseKeeper/cash-save',
       dataType: 'json',
       data: {
-        which: "s",
-        time: time,//注意日期格式
+        which: "o",
+        time: Date.parse(time)/1000,//注意日期格式
         site: site,
         people:'',
         money: money,
@@ -141,7 +139,9 @@ $(document).ready(function(){
         accountId: accountId
       },
       success: function (res) {
-        alert(res.result)
+        if (res.status === "200"){
+          alert("提交成功");
+        }
       },
       error: function (err) {
         alert("提交失败")
@@ -164,7 +164,7 @@ $(document).ready(function(){
       dataType: 'json',
       data: {
         which: 'i',
-        time: time,//注意日期格式
+        time: Date.parse(time)/1000,//注意日期格式
         site: site,
         people:'',
         money: money,
@@ -175,10 +175,12 @@ $(document).ready(function(){
         accountId: accountId
       },
       success: function (res) {
-        alert(res.result)
+        if (res.status === "200") {
+          alert("提交成功");
+        }
       },
       error: function (err) {
-        alert("请求失败")
+        alert("提交失败")
       }
     })
     return false;

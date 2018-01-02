@@ -32,17 +32,14 @@ $(document).ready(function () {
     });
 
     /* -------year picker --------*/
-
-
-        var sel = document.getElementsByClassName('sel');
+        var sel = $('.sel');
         for (var i = 2010; i < 2020; i++) {
-            var option = document.createElement('option');
-            option.value = i;
-            var txt = document.createTextNode(i);
-            option.appendChild(txt);
-            sel.appendChild(option);
+          var option = `<option>${i}</option>`
+            sel.each(function() {
+              $(this).append(option)
+            })
+            // option[1].appendChild(txt);
         }
-
 /* ---------- Stack chart ---------- */
 
 var barGraph = echarts.init(document.getElementById('barGraph_home'));
@@ -122,9 +119,9 @@ lineChart.setOption(option);
 
 /* ------- in table ------- */
 
-function GetMultiLineSelectTable(tableId, selectIds) {
+function GetMultiLineSelectTableIn(tableId, selectIds) {
     var table = $(tableId);
-    var url = table.data('zjh.hduzjh.cn/HouseKeeper/cash-inSave');
+    var url = 'http://zjh.hduzjh.cn/HouseKeeper/cash-inSave';
     var ischeckbox = false;
     //获取数据项名称
     var fileds = new Array();
@@ -173,16 +170,16 @@ function GetMultiLineSelectTable(tableId, selectIds) {
                 if (ischeckbox) $(this).find('input[type="checkbox"]').attr('checked', $(this).hasClass('active')); //选择复选框
             });
 
-        }).fail(function () {
-            alert("Err");
+        }).fail(function (err) {
+            alert(err);
         });
 }
 
 /* ------out table -----*/
 
-function GetMultiLineSelectTable(tableId, selectIds) {
+function GetMultiLineSelectTableOut(tableId, selectIds) {
     var table = $(tableId);
-    var url = table.data('zjh.hduzjh.cn/HouseKeeper/cash-outSave');
+    var url = 'http://zjh.hduzjh.cn/HouseKeeper/cash-outSave';
     var ischeckbox = false;
     //获取数据项名称
     var fileds = new Array();
@@ -231,8 +228,8 @@ function GetMultiLineSelectTable(tableId, selectIds) {
                 if (ischeckbox) $(this).find('input[type="checkbox"]').attr('checked', $(this).hasClass('active')); //选择复选框
             });
 
-        }).fail(function () {
-            alert("Err");
+        }).fail(function (err) {
+            alert(err);
         });
 }
 
@@ -246,4 +243,8 @@ function formatJsonData(jsondata) {
     }
     return jsondata;
 }
+
+  GetMultiLineSelectTableIn("#inTable");
+  GetMultiLineSelectTableOut("#outTable");
+
 });
