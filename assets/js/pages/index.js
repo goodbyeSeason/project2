@@ -98,7 +98,7 @@ $(document).ready(function(){
       url: 'http://zjh.hduzjh.cn/HouseKeeper/item-query',
       dataType: 'json',
       data: {
-        which: "0",
+        which: "o",
         id: itemId
       },
       success: function (res) {

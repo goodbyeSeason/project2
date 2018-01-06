@@ -12,6 +12,7 @@ $(function () {
             },
             success:function (res) {
               localStorage.memberId = res.data.id.memberId;
+              localStorage.familyId = res.data.id.familyId;
               console.log(localStorage.memberId);
               window.location.href = "index.html";
             },

@@ -34,7 +34,7 @@ $(document).ready(function () {
         yAxis: {
             type: 'value',
             axisLabel: {
-                formatter: '{value} k'
+                formatter: '{value} '
             },
             axisPointer: {
                 snap: true
@@ -92,7 +92,7 @@ $(document).ready(function () {
             {
                 type: 'value',
                 axisLabel: {
-                    formatter: '{value} k'
+                    formatter: '{value} '
                 },
             }
         ],
@@ -190,6 +190,7 @@ $(document).ready(function () {
         });
     }
     function getMapData() {
+        var memberId = localStorage.memberId;
         var year = $(".sel").val()
         var url = 'http://zjh.hduzjh.cn/HouseKeeper/cash-yearSum';
         $.ajax({
@@ -198,7 +199,7 @@ $(document).ready(function () {
             dataType: 'json',
             data: {
               year: year,
-              memberId: 3,
+              memberId: memberId,
             }
         })
             .done(function (res) {
