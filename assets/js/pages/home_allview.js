@@ -134,7 +134,7 @@ $(document).ready(function () {
     }
     function getData(i) {
         var familyId = localStorage.familyId;
-        var url = 'http://localhost:8080/HouseKeeper/cash-query';
+        var url = 'http://zjh.hduzjh.cn/HouseKeeper/cash-query';
         $.ajax({
             url: url,
             type: 'post',
