@@ -302,159 +302,159 @@
         </div>
 
         <div class="panel panel-default">
-            <div class="panel-heading">
-                <h2>
-                    <i class="fa fa-search red"></i>
-                    <strong> 查询 </strong>
-                </h2>
-            </div>
-            <div class="panel-body">
-                <button id="show_input" type="button" class="btn btn-default">查询收入详细</button>
-                <button id="show_output" type="button" class="btn btn-default">查询支出详细</button>
-            </div>
-        </div>
+            <!--<div class="panel-heading">-->
+                <!--<h2>-->
+                    <!--<i class="fa fa-search red"></i>-->
+                    <!--<strong> 查询 </strong>-->
+                <!--</h2>-->
+            <!--</div>-->
+            <!--<div class="panel-body">-->
+                <!--<button id="show_input" type="button" class="btn btn-default">查询收入详细</button>-->
+                <!--<button id="show_output" type="button" class="btn btn-default">查询支出详细</button>-->
+            <!--</div>-->
+        <!--</div>-->
 
-        <div class="row" id="in_btn" style="display:none">
-            <div class="col-lg-12">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h2>
-                            <i class="fa fa-search-minus red"></i>
-                            <strong>收入详细查询</strong>
-                        </h2>
-                    </div>
-                    <div class="panel-body">
-                        <form role="form">
-                            <div class="form-group">
-                                <label class="control-label">按支出时间查询</label>
-                                <div class="controls">
-                                    <div class="input-group date col-sm-4">
-                                        <span class="input-group-addon">
-                                            <i class="fa fa-calendar"></i>
-                                        </span>
-                                        <input type="text" class="from" style="width: 175px;height:31px;border-radius:2px;border:1px solid #BFBFBF">
-                                        <label>to</label>
-                                        <input type="text" class="to" style="width: 175px;height:31px;border-radius:2px;border:1px solid #BFBFBF;white-space: nowrap">
-                                    </div>
-                                </div>
-                            </div>
+        <!--<div class="row" id="in_btn" style="display:none">-->
+            <!--<div class="col-lg-12">-->
+                <!--<div class="panel panel-default">-->
+                    <!--<div class="panel-heading">-->
+                        <!--<h2>-->
+                            <!--<i class="fa fa-search-minus red"></i>-->
+                            <!--<strong>收入详细查询</strong>-->
+                        <!--</h2>-->
+                    <!--</div>-->
+                    <!--<div class="panel-body">-->
+                        <!--<form role="form">-->
+                            <!--<div class="form-group">-->
+                                <!--<label class="control-label">按支出时间查询</label>-->
+                                <!--<div class="controls">-->
+                                    <!--<div class="input-group date col-sm-4">-->
+                                        <!--<span class="input-group-addon">-->
+                                            <!--<i class="fa fa-calendar"></i>-->
+                                        <!--</span>-->
+                                        <!--<input type="text" class="from" style="width: 175px;height:31px;border-radius:2px;border:1px solid #BFBFBF">-->
+                                        <!--<label>to</label>-->
+                                        <!--<input type="text" class="to" style="width: 175px;height:31px;border-radius:2px;border:1px solid #BFBFBF;white-space: nowrap">-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                            <!--</div>-->
 
-                            <div class="form-group">
-                                <label class="control-label" for="itemId">按收入分类查询</label>
-                                <div class="controls">
-                                    <div class="input-group col-sm-4">
-                                        <select id="selecttypeout" name="select" class="form-control" size="1">
-                                            <option>请选择</option>
-                                        </select>
-                                        <br>
-                                        <br>
-                                        <br>
-                                        <select class="subItemId2 sub_first">
-                                            <option>请选择子类</option>
-                                        </select>
-                                    </div>
-                                </div>
+                            <!--<div class="form-group">-->
+                                <!--<label class="control-label" for="itemId">按收入分类查询</label>-->
+                                <!--<div class="controls">-->
+                                    <!--<div class="input-group col-sm-4">-->
+                                        <!--<select id="selecttypeout" name="select" class="form-control" size="1">-->
+                                            <!--<option>请选择</option>-->
+                                        <!--</select>-->
+                                        <!--<br>-->
+                                        <!--<br>-->
+                                        <!--<br>-->
+                                        <!--<select class="subItemId2 sub_first">-->
+                                            <!--<option>请选择子类</option>-->
+                                        <!--</select>-->
+                                    <!--</div>-->
+                                <!--</div>-->
 
-                                <label class="control-label" for="selectmembersout">按收入成员查询</label>
-                                <div class="controls">
-                                    <div class="input-group col-sm-4">
-                                        <select id="selectmembersout" name="select" class="form-control" size="1">
-                                            <option value="0">请选择</option>
-                                            <option value="1">张家豪</option>
-                                            <option value="2">俞有成</option>
-                                            <option value="3">吴伟伟</option>
-                                        </select>
-                                    </div>
-                                </div>
+                                <!--<label class="control-label" for="selectmembersout">按收入成员查询</label>-->
+                                <!--<div class="controls">-->
+                                    <!--<div class="input-group col-sm-4">-->
+                                        <!--<select id="selectmembersout" name="select" class="form-control" size="1">-->
+                                            <!--<option value="0">请选择</option>-->
+                                            <!--<option value="1">张家豪</option>-->
+                                            <!--<option value="2">俞有成</option>-->
+                                            <!--<option value="3">吴伟伟</option>-->
+                                        <!--</select>-->
+                                    <!--</div>-->
+                                <!--</div>-->
 
-                                <label class="control-label" for="selectaccountsout">按收入账户查询</label>
-                                <div class="controls">
-                                    <div class="input-group col-sm-4">
-                                        <select id="selectaccountsout" name="select" class="form-control" size="1">
-                                            <option value="0">请选择</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
+                                <!--<label class="control-label" for="selectaccountsout">按收入账户查询</label>-->
+                                <!--<div class="controls">-->
+                                    <!--<div class="input-group col-sm-4">-->
+                                        <!--<select id="selectaccountsout" name="select" class="form-control" size="1">-->
+                                            <!--<option value="0">请选择</option>-->
+                                        <!--</select>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                            <!--</div>-->
 
-                        </form>
-                    </div>
-                </div>
-            </div>
-            <!--/col-->
+                        <!--</form>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--&lt;!&ndash;/col&ndash;&gt;-->
 
-        </div>
+        <!--</div>-->
 
-        <div class="row" id="out_btn" style="display:none">
-            <div class="col-lg-12">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h2>
-                            <i class="fa fa-search-minus red"></i>
-                            <strong>支出详细查询</strong>
-                        </h2>
-                    </div>
-                    <div class="panel-body">
-                        <form role="form">
-                            <div class="form-group">
-                                <label class="control-label">按支出时间查询</label>
-                                <div class="controls">
-                                    <div class="input-group date col-sm-4">
-                                        <span class="input-group-addon">
-                                            <i class="fa fa-calendar"></i>
-                                        </span>
-                                        <input type="text" class="from" style="width: 175px;height:31px;border-radius:2px;border:1px solid #BFBFBF">
-                                        <label>to</label>
-                                        <input type="text" class="to" style="width: 175px;height:31px;border-radius:2px;border:1px solid #BFBFBF;white-space: nowrap">
-                                    </div>
-                                </div>
-                            </div>
+        <!--<div class="row" id="out_btn" style="display:none">-->
+            <!--<div class="col-lg-12">-->
+                <!--<div class="panel panel-default">-->
+                    <!--<div class="panel-heading">-->
+                        <!--<h2>-->
+                            <!--<i class="fa fa-search-minus red"></i>-->
+                            <!--<strong>支出详细查询</strong>-->
+                        <!--</h2>-->
+                    <!--</div>-->
+                    <!--<div class="panel-body">-->
+                        <!--<form role="form">-->
+                            <!--<div class="form-group">-->
+                                <!--<label class="control-label">按支出时间查询</label>-->
+                                <!--<div class="controls">-->
+                                    <!--<div class="input-group date col-sm-4">-->
+                                        <!--<span class="input-group-addon">-->
+                                            <!--<i class="fa fa-calendar"></i>-->
+                                        <!--</span>-->
+                                        <!--<input type="text" class="from" style="width: 175px;height:31px;border-radius:2px;border:1px solid #BFBFBF">-->
+                                        <!--<label>to</label>-->
+                                        <!--<input type="text" class="to" style="width: 175px;height:31px;border-radius:2px;border:1px solid #BFBFBF;white-space: nowrap">-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                            <!--</div>-->
 
-                            <div class="form-group">
-                                <label class="control-label" for="itemId">按支出分类查询</label>
-                                <div class="controls">
-                                    <div class="input-group col-sm-4">
-                                        <select id="selecttypeout" name="select" class="form-control" size="1">
-                                            <option>请选择</option>
-                                        </select>
-                                        <br>
-                                        <br>
-                                        <br>
-                                        <select class="subItemId2 sub_first">
-                                            <option>请选择子类</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
+                            <!--<div class="form-group">-->
+                                <!--<label class="control-label" for="itemId">按支出分类查询</label>-->
+                                <!--<div class="controls">-->
+                                    <!--<div class="input-group col-sm-4">-->
+                                        <!--<select id="selecttypeout" name="select" class="form-control" size="1">-->
+                                            <!--<option>请选择</option>-->
+                                        <!--</select>-->
+                                        <!--<br>-->
+                                        <!--<br>-->
+                                        <!--<br>-->
+                                        <!--<select class="subItemId2 sub_first">-->
+                                            <!--<option>请选择子类</option>-->
+                                        <!--</select>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                            <!--</div>-->
 
-                            <div class="form-group">
-                                <label class="control-label" for="selectmembersout">按支出成员查询</label>
-                                <div class="controls">
-                                    <div class="input-group col-sm-4">
-                                        <select id="selectmembersout" name="select" class="form-control" size="1">
-                                            <option value="0">请选择</option>
-                                            <option value="1">张家豪</option>
-                                            <option value="2">俞有成</option>
-                                            <option value="3">吴伟伟</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
+                            <!--<div class="form-group">-->
+                                <!--<label class="control-label" for="selectmembersout">按支出成员查询</label>-->
+                                <!--<div class="controls">-->
+                                    <!--<div class="input-group col-sm-4">-->
+                                        <!--<select id="selectmembersout" name="select" class="form-control" size="1">-->
+                                            <!--<option value="0">请选择</option>-->
+                                            <!--<option value="1">张家豪</option>-->
+                                            <!--<option value="2">俞有成</option>-->
+                                            <!--<option value="3">吴伟伟</option>-->
+                                        <!--</select>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                            <!--</div>-->
 
-                            <div class="form-group">
-                                <label class="control-label" for="selectaccountsout">按支出账户查询</label>
-                                <div class="controls">
-                                    <div class="input-group col-sm-4">
-                                        <select id="selectaccountsout" name="select" class="form-control" size="1">
-                                            <option value="0">请选择</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
+                            <!--<div class="form-group">-->
+                                <!--<label class="control-label" for="selectaccountsout">按支出账户查询</label>-->
+                                <!--<div class="controls">-->
+                                    <!--<div class="input-group col-sm-4">-->
+                                        <!--<select id="selectaccountsout" name="select" class="form-control" size="1">-->
+                                            <!--<option value="0">请选择</option>-->
+                                        <!--</select>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</form>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
             <!--/col-->
 
         </div>
